@@ -24,38 +24,13 @@ streetview-country-geolocation-classification/
 │  ├─ interim/
 │  └─ processed/
 │
-├─ notebooks/
-│  ├─ 01_exploration.ipynb
-│  ├─ 02_preprocessing.ipynb
-│  └─ 03_modeling.ipynb
-│
-├─ src/
-│  ├─ config/
-│  ├─ data/
-│  ├─ features/
-│  ├─ models/
-│  ├─ evaluation/
-│  └─ utils/
-│
 ├─ scripts/
 │  ├─ make_splits.py
 │  ├─ train_model.py
-│  ├─ evaluate_model.py
-│  └─ visualize_results.py
+│  └─ evaluate_model.py
 │
-├─ tests/
-│  ├─ test_data_utils.py
-│  ├─ test_metrics.py
-│  └─ test_models.py
-│
-├─ reports/
-│  ├─ figures/
-│  └─ final_report/
-│
-└─ docs/
-   ├─ architecture.md
-   ├─ data_card.md
-   └─ usage.md
+└─ results/
+
 ```
 
 ---
@@ -107,14 +82,14 @@ pip install -r requirements.txt
 This project relies on the following major Python libraries:
 
 - **Python 3.10+**
-- **PyTorch** — deep learning framework used to train the ResNet-18 model  
-- **Torchvision** — pretrained models and image transform utilities  
-- **Pandas** — metadata loading and preprocessing  
-- **NumPy** — numerical operations  
-- **scikit-learn** — confusion matrix and classification metrics  
-- **Pillow (PIL)** — image loading and resizing  
-- **Matplotlib** — plotting accuracy/loss curves and confusion matrices  
-- **tqdm** — progress bars for preprocessing and training loops  
+- **PyTorch** — deep learning framework used to train the ResNet-18 model
+- **Torchvision** — pretrained models and image transform utilities
+- **Pandas** — metadata loading and preprocessing
+- **NumPy** — numerical operations
+- **scikit-learn** — confusion matrix and classification metrics
+- **Pillow (PIL)** — image loading and resizing
+- **Matplotlib** — plotting accuracy/loss curves and confusion matrices
+- **tqdm** — progress bars for preprocessing and training loops
 
 All dependencies are listed in:
 
@@ -122,28 +97,29 @@ All dependencies are listed in:
 requirements.txt
 ```
 
-Install them with:
-
-```
-pip install -r requirements.txt
-```
-
-
 ---
 
 ## Dataset Placement
 
+Create the required directory structure:
+
+```
+mkdir -p data/raw
+```
+
 Place your dataset inside:
 
 ```
-data/raw/
+data/raw/images/test/...
+data/raw/test.csv
 ```
 
 Example:
 
 ```
-data/raw/images/...
-data/raw/metadata.csv
+data/raw/images/test/00/00001.jpg
+data/raw/images/test/01/00057.jpg
+data/raw/test.csv
 ```
 
 ---
@@ -264,26 +240,12 @@ Metrics include:
 
 ---
 
-## Running Tests
-
-```
-pytest
-```
-
----
-
-## Reports
+## Results
 
 Generated figures appear in:
 
 ```
-reports/figures/
-```
-
-Final written report goes in:
-
-```
-reports/final_report/
+results/
 ```
 
 ---

@@ -216,7 +216,8 @@ __marimo__/
 # -----------------------------------------
 
 # Data directories (dataset is too large for repo)
-data/raw/
+data/raw/images
+data/raw/test.csv
 data/interim/
 data/processed/
 
